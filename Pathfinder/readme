@@ -1,1 +1,2 @@
 I haven't commented the code yet but there is an exaple of how to create a graph and run dijkstra's in the test main class
+The RTN(Room to Node) files have information on which rooms are connected to each node and their various names
