@@ -4,7 +4,8 @@ import java.io.*;
 public class Extractor {
 	private Scanner file;
 	private PrintWriter output;
-	public TreeMap<String, String[]> vertices;	// String array [vertexLabel, type, x pos, y pos]
+	int count = 0;
+	public TreeMap<String, String[]> vertices;	// String array [nodeNum, vertexLabel, type, x pos, y pos]
 	public HashMap<String[], Double> edges; 	// String array [edge ID, nodeLabel1, nodeLabel2]
 	
 	public Extractor(String filename){
@@ -22,47 +23,49 @@ public class Extractor {
 	
 	private void extract() {
 		while(file.hasNext()) {
-			String[] nodeInfo = new String[4];
+			String[] nodeInfo = new String[5];	// 
 			String temp = file.nextLine();
 			if(temp.contains("node id")) {
 				String type = null;
 				String[] nodeID = temp.split(String.valueOf((char)34));
+				nodeInfo[0] = nodeID[1];
 				
-				for(int i = 0; i < 3; i++) {
+				while(!temp.contains("Geometry")) {
 					temp = file.nextLine();
 				}			
 				String[] geometry = temp.split("\\s+");
 				String[] xPos = geometry[4].split(String.valueOf((char)34)); 
 				String[] yPos = geometry[5].split(String.valueOf((char)34));
-				nodeInfo[2] = xPos[1];
-				nodeInfo[3] = yPos[1];
+				nodeInfo[3] = xPos[1];
+				nodeInfo[4] = yPos[1];
 				
-				for(int i = 0; i < 3; i++) {
+				while(!temp.contains("NodeLabel alignment")) {
 					temp = file.nextLine();
 				}			
 				String[] splitLabel = temp.split((char)34+">");
-				
-				for(int i = 0; i < 7; i++) {
+				nodeInfo[1] = splitLabel[1].replaceAll("<y:LabelModel>", "");
+				while(!temp.contains("Shape type")) {
 					temp = file.nextLine();
 				}			
 				String[] splitType = temp.split(String.valueOf((char)34));
 				if(splitType[1].equals("ellipse")) {
 					type = "hall";
 				} else if(splitType[1].equals("rectangle")) {
-					type = "Lift";
+					type = "lift";
 				} else if(splitType[1].equals("hexagon")) {
-					type = "largeArea";
+					if(nodeInfo[1].contains("LR")) {
+						type = "largeRoom";
+					} else type = "largeArea";
 				} else if(splitType[1].equals("triangle")) {
-					type = "Exit";
+					type = "exit";
 				} else if(splitType[1].equals("star8")) {
-					type = "Toilet";
+					type = "toilet";
 				} else if(splitType[1].equals("trapezoid")) {
-					type = "StairUp";
+					type = "stairUp";
 				} else if(splitType[1].equals("trapezoid2")) {
-					type = "StairDown";
+					type = "stairDown";
 				}
-				nodeInfo[0] = splitLabel[1].replaceAll("<y:LabelModel>", "");
-				nodeInfo[1] = type;
+				nodeInfo[2] = type;
 				vertices.put(nodeID[1], nodeInfo);
 			}
 			if(temp.contains("edge id")) {
@@ -82,12 +85,8 @@ public class Extractor {
 	private double calcWeight(String[] edgeInfo) {
 		String[] tempVertex1 = vertices.get(edgeInfo[1]);
 		String[] tempVertex2 = vertices.get(edgeInfo[2]);
-		double xDist = Double.parseDouble(tempVertex1[2]) - Double.parseDouble(tempVertex2[2]);
-		double yDist = Double.parseDouble(tempVertex1[3]) - Double.parseDouble(tempVertex2[3]);
-		if(xDist < 0) xDist *= -1;
-		if(yDist < 0) yDist *= -1;
-		double weight = xDist + yDist;
-		return weight;
+		// Calculate Straight Line Distance(calcSLD). Used to find the weight of each edge
+		return aStar.calcSLD(Double.parseDouble(tempVertex1[3]), Double.parseDouble(tempVertex1[4]), Double.parseDouble(tempVertex2[3]), Double.parseDouble(tempVertex2[4]));
 	}
 	
 	public void printFile() {
@@ -126,4 +125,3 @@ public class Extractor {
 		return new String(newName);
 	}
 }
-

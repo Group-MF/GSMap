@@ -1,28 +1,34 @@
 import java.util.*;
 
 public class Vertex {
-	private String label;
-	private String type;
+	private String label, type;
+	private double xPos, yPos;
 	private boolean active;
 	private HashSet<Edge> edges;
 	
-	public Vertex(String l) {
+	public Vertex(String l, double x, double y) {
 		label = l;
+		xPos = x;
+		yPos = y;
 		type = calcType();
 		active = calcActive();
 		edges = new HashSet<Edge>();
 	}
 	
-	public Vertex(String l, String t) {
+	public Vertex(String l, String t, double x, double y) {
 		label = l;
 		type = t;
+		xPos = x;
+		yPos = y;
 		active = calcActive();
 		edges = new HashSet<Edge>();
 	}
 	
-	public Vertex(String l, String t, HashSet<Edge> e) {
+	public Vertex(String l, String t, HashSet<Edge> e, double x, double y) {
 		label = l;
 		type = t;
+		xPos = x;
+		yPos = y;
 		active = calcActive();
 		edges = new HashSet<Edge>();
 		Iterator<Edge> i = e.iterator();	// Iterates through the input HashSet
@@ -53,6 +59,14 @@ public class Vertex {
 	
 	public String getType() {
 		return type;
+	}
+	
+	public double getX() {
+		return xPos;
+	}
+	
+	public double getY() {
+		return yPos;
 	}
 	
 	public boolean isActive() {
@@ -90,21 +104,21 @@ public class Vertex {
 	
 	private String calcType() {
 		String t = null;
-		if(type.contains("L")) t = "Lift";
-		else if(type.contains("SU")) t = "StairUp";
-		else if(type.contains("SD")) t = "StairDown";
-		else if(type.contains("T")) t = "Toilet";
-		else if(type.contains("E")) t = "Exits";
-		else if(type.contains("LA")) t = "Large Area";
+		if(type.contains("L")) t = "lift";
+		else if(type.contains("SU")) t = "stairUp";
+		else if(type.contains("SD")) t = "stairDown";
+		else if(type.contains("T")) t = "toilet";
+		else if(type.contains("E")) t = "exits";
+		else if(type.contains("LR")) t = "largeRoom";
 		else t = "hall";
 		return t;
 	}
 	
 	private boolean calcActive() {
 		boolean act = true;
-		if(type.equals("Lift")) act = false; // Lift mode is off by default
-		if(type.equals("Large Room")) act = false; // Option to go through large rooms is off by default
-		if(type.equals("Exit") && label.contains("FE")) act = false; // Fire exits are off by default
+		if(type.equals("lift")) act = false; // Lift mode is off by default
+		if(type.equals("largeRoom")) act = false; // Option to go through large rooms is off by default
+		if(type.equals("exit") && (label.contains("FE") || label.contains("SE"))) act = false; // Fire exits are off by default
 		return act;
 	}
 }

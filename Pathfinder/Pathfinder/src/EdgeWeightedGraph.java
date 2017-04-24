@@ -9,16 +9,6 @@ public class EdgeWeightedGraph {
 		vertices = new TreeMap<String, Vertex>();
 	}
 	
-	public EdgeWeightedGraph(int v) {
-		if(v < 0) throw new IllegalArgumentException("Expected positive integer but was " + v);
-		edges = new HashSet<Edge>();
-		vertices = new TreeMap<String, Vertex>();
-		for(int i = 0; i < v; i++) {
-			String label = String.valueOf(i);
-			vertices.put(label, new Vertex(label));
-		}
-	}
-	
 	public int size() {
 		return vertices.size();
 	}
@@ -38,12 +28,12 @@ public class EdgeWeightedGraph {
 		return null;
 	}
 	
-	public void addVertex(String label) {
-		vertices.put(label, new Vertex(label));
+	public void addVertex(String label, double xPos, double yPos) {
+		vertices.put(label, new Vertex(label, xPos, yPos));
 	}
 	
-	public void addVertex(String label, String type) {
-		vertices.put(label, new Vertex(label, type));
+	public void addVertex(String label, String type, double xPos, double yPos) {
+		vertices.put(label, new Vertex(label, type, xPos, yPos));
 	}
 	
 	public void addVertex(Vertex vertex) {
