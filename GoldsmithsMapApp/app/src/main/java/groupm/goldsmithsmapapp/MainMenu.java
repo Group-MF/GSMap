@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Joel on 03/05/2017.
+ * Created by Group M on 03/05/2017.
  */
 
 public class MainMenu extends AppCompatActivity {

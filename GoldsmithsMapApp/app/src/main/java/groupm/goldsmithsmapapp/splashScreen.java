@@ -20,7 +20,8 @@ public class SplashScreen extends AppCompatActivity {
      */
     public void enterMenu(View view){
         Intent toMenu = new Intent(this, MainMenu.class);
-
+//data entry mode
+// map view mode with panning and line drawings
 
 
     }

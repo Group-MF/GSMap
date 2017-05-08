@@ -12,4 +12,15 @@
 
     <style name="AppTheme"></style>
 
+    <style name="colorprimary1" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@color/gold</item>
+        <item name="colorPrimaryDark">@color/purple</item>
+        <item name="colorAccent">@color/teal</item>
+        <item name="android:colorForeground">@color/white</item>
+    </style>
+
+    <style name="Theme.AppCompat.NoActionBar.Light.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorAccent">@color/teal</item>
+    </style>
+
 </resources>
