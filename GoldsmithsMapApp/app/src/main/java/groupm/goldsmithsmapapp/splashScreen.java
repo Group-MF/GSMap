@@ -18,12 +18,9 @@ public class SplashScreen extends AppCompatActivity {
     Invisible button (or interactive image) is used to trigger the menu activity
 
      */
-    public void enterMenu(View view){
+    public void enterMenu(View view) {
         Intent toMenu = new Intent(this, MainMenu.class);
 //data entry mode
 // map view mode with panning and line drawings
-
-
     }
-
 }
