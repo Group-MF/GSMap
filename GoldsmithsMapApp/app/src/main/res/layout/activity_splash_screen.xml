@@ -9,11 +9,9 @@
 
     <Button
         android:id="@+id/EnterButton"
-
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/splash_bg"
-
         android:onClick="enterMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

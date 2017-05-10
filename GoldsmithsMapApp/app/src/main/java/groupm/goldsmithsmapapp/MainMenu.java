@@ -11,18 +11,22 @@ import android.view.View;
 
 public class MainMenu extends AppCompatActivity {
     @Override
+    //This is the root page
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
+    }
         //search
-
     public void searchWindow(View view) {
         Intent intent = new Intent(this, displaySearchActivity.class);
-
+startActivity(intent);
     }
 
 
     //show map
+    public void showMap(View view){
+        Intent intent = new Intent(this, displaySearchActivity.class);
+        startActivity(intent);
+    }
 
 }

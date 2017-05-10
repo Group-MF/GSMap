@@ -1,4 +1,7 @@
 <resources>
     <string name="goldsmiths_map_nav">GoldsmithsMapApp</string>
+    <string name="FindRoom">Button</string>
+    <string name="enterSearch">enterSearch</string>
+    <string name="main_menu">\"main_menu\"</string>
 
 </resources>
