@@ -9,26 +9,26 @@ public class EdgeWeightedGraph {
 		vertices = new TreeMap<String, Vertex>();
 	}
 	
-	public int size() {
+	public int size() { // Returns the number of Vertices in graph
 		return vertices.size();
 	}
 	
-	public int edgeNum() {
+	public int edgeNum() { // Returns the number of edges in the graph
 		return edges.size();
 	}
 	
-	public TreeMap<String, Vertex> getVertices() {
+	public TreeMap<String, Vertex> getVertices() { // Returns the vertices treeMap
 		return vertices;
 	}
 	
-	public Vertex getVertex(String label) {
+	public Vertex getVertex(String label) { // Returns the vertex associated with input label
 		for(String l: vertices.keySet()) {
 			if(l.equals(label)) return vertices.get(l);
 		}
 		return null;
 	}
 	
-	public void addVertex(String label, double xPos, double yPos) {
+	public void addVertex(String label, double xPos, double yPos) { 
 		vertices.put(label, new Vertex(label, xPos, yPos));
 	}
 	
@@ -55,7 +55,7 @@ public class EdgeWeightedGraph {
 		return edges;
 	}
 	
-	public void addEdge(String vertexLabel1, String vertexLabel2, double w) {
+	public void addEdge(String vertexLabel1, String vertexLabel2, double w) { // Attach an edge to each of the vertices via they labels
 		edges.add(new Edge(getVertex(vertexLabel1), getVertex(vertexLabel2), w));
 	}
 	

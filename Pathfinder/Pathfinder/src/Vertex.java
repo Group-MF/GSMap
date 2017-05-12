@@ -2,11 +2,11 @@ import java.util.*;
 
 public class Vertex {
 	private String label, type;
-	private double xPos, yPos;
-	private boolean active;
-	private HashSet<Edge> edges;
+	private double xPos, yPos; // The position of the vertex
+	private boolean active; // Used for A* algorithm
+	private HashSet<Edge> edges; // Stores a set of all edges connected to this vertex
 	
-	public Vertex(String l, double x, double y) {
+	public Vertex(String l, double x, double y) { // Constructor for no type input
 		label = l;
 		xPos = x;
 		yPos = y;
@@ -41,35 +41,35 @@ public class Vertex {
 		edges.add(e);
 	}
 	
-	public void remove(Vertex vertex) {
+	public void remove(Vertex vertex) { // Removes the edge connecting to given vertex
 		edges.remove(findEdge(vertex));
 	}
 	
-	public void remove(Edge e) {
+	public void remove(Edge e) { // Remove given edge
 		edges.remove(e);
 	}
 	
-	public int degree() {
+	public int degree() { // Returns the degree of this node
 		return edges.size();
 	}
 	
-	public String getLabel() {
+	public String getLabel() { // Getter for label
 		return label;
 	}
 	
-	public String getType() {
+	public String getType() { // Setter for label
 		return type;
 	}
 	
-	public double getX() {
+	public double getX() { // Getter for xPosition
 		return xPos;
 	}
 	
-	public double getY() {
+	public double getY() { // Setter for xPosition
 		return yPos;
 	}
 	
-	public boolean isActive() {
+	public boolean isActive() { // Returns if the node is active
 		return active;
 	}
 	
@@ -77,7 +77,7 @@ public class Vertex {
 		active = b;
 	}
 	
-	public Edge findEdge(Vertex vertex) {
+	public Edge findEdge(Vertex vertex) { // 
 		Iterator<Edge> edgeIt = edges.iterator();
 		Edge e = null;
 		while(edgeIt.hasNext()) {

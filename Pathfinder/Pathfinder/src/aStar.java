@@ -9,13 +9,6 @@ public class aStar {
 		path = calcPath(graph, start, end);
 	}
 	
-	public aStar(EdgeWeightedGraph graph, String start, String end, String originStart) {
-		System.out.println(originStart);
-		System.out.println(graph.getVertex("F1_ME"));
-		pathWeight += aStar.calcSLD(graph.getVertex(originStart).getX(), graph.getVertex(originStart).getX(), graph.getVertex(end).getX(), graph.getVertex(end).getY());
-		path = calcPath(graph, start, end);
-	}
-	
 	public double getPathWeight() {
 		return pathWeight;
 	}
@@ -38,13 +31,13 @@ public class aStar {
 		return xDist + yDist;
 	}
 
-	private LinkedList<String> calcPath(EdgeWeightedGraph graph, String start, String end) {
-		TreeMap<String, Integer> arrayPos = new TreeMap<String, Integer>();
-		TreeMap<String, Vertex> unvisited = new TreeMap<String, Vertex>(graph.getVertices());
+	private LinkedList<String> calcPath(EdgeWeightedGraph graph, String start, String end) {	// The main logic for this class
+		TreeMap<String, Integer> arrayPos = new TreeMap<String, Integer>(); // Used to map Vertex labels to array index positions
+		TreeMap<String, Vertex> unvisited = new TreeMap<String, Vertex>(graph.getVertices()); // List of all vertices to traverse
 		String[] previous = new String[graph.size()];
 		double[] distance = new double[graph.size()];
 		LinkedList<String> path = null;
-		ArrayList<String> inaccessV = new ArrayList<String>(); // Inaccessible vertex(inaccess V) a list of vertives to be removes from unvisited
+		ArrayList<String> inaccessV = new ArrayList<String>(); // Inaccessible vertex(inaccess V) a list of vertices to be removes from unvisited
 		Vertex current = unvisited.get(start);
 		
 		for(Vertex vertex: unvisited.values()) { // If the vertex is not active removes it from the list of unvisited vertices (It will not be accessed)
@@ -54,7 +47,7 @@ public class aStar {
 		}
 		for(String vertexLabel: inaccessV) unvisited.remove(vertexLabel); // Removes the vertex
 		
-		int count = 0;
+		int count = 0; // Used for the index position
 		for(String label: unvisited.keySet()) { // Iterates through labels to give each label an array position
 			arrayPos.put(label, count);
 			count++;
@@ -63,11 +56,12 @@ public class aStar {
 		for(int i = 0; i < distance.length; i++) { // Initialize the distance array to be infinity
 			distance[i] = Double.POSITIVE_INFINITY;
 		}
-		distance[arrayPos.get(start)] = 0; // 
+		distance[arrayPos.get(start)] = 0; // Sets the distance from 
 
 		while(unvisited.size() > 0) {
 			unvisited.remove(current.getLabel());
 			double smallest = Double.POSITIVE_INFINITY;
+			
 			Iterator<Edge> edgeIt = current.getEdges().iterator();
 			while(edgeIt.hasNext()) { // Goes through each edge connected to the current vertex
 				Edge currentEdge = (Edge)edgeIt.next();
@@ -75,11 +69,16 @@ public class aStar {
 				if(unvisited.containsValue(otherVertex)) { // Check if the edge has already been used
 					String otherVertexLabel = otherVertex.getLabel();
 					int vertexPos = arrayPos.get(otherVertexLabel); // Finds the array position of the other vertex connected to current edge
+					
 					// Calculates the straight line distance for current vertex and the other vertex to calculate the heuristic
 					double heuristic = calcSLD(current.getX(), current.getY(), unvisited.get(end).getX(), unvisited.get(end).getY()) - calcSLD(otherVertex.getX(), otherVertex.getY(), unvisited.get(end).getX(), unvisited.get(end).getY());
-					double tentDist = distance[arrayPos.get(current.getLabel())] + currentEdge.getWeight() + heuristic; // Calculates the tentative distance (from start to next vertex) taking the heuristic into account
-					if(distance[vertexPos] == Double.POSITIVE_INFINITY || distance[vertexPos] > tentDist) { // If the tentative distance is smaller then the current distance
-						distance[vertexPos] = tentDist;			// updates the distance
+					
+					// Calculates the tentative distance (from start to next vertex) taking the heuristic into account
+					double tentDist = distance[arrayPos.get(current.getLabel())] + currentEdge.getWeight() + heuristic;
+					
+					// If the tentative distance is smaller then the current distance
+					if(distance[vertexPos] == Double.POSITIVE_INFINITY || distance[vertexPos] > tentDist) {
+						distance[vertexPos] = tentDist;				// updates the distance
 						previous[vertexPos] = current.getLabel();	// and previous vertex
 					} else break;
 				}
@@ -87,13 +86,17 @@ public class aStar {
 			for(int i = 0; i < distance.length; i++) {
 				if(smallest > distance[i]) {
 					boolean updated = false;
-					for(Map.Entry<String, Integer> entry: arrayPos.entrySet()) {	// Iterates through the entries in arrayPos
-						if(entry.getValue() == i && unvisited.containsKey(entry.getKey())) { // To find the vertex with position i, and check if it has been visited
-							current = unvisited.get(entry.getKey()); // 
+					
+					// Iterates through the entries in arrayPos
+					for(Map.Entry<String, Integer> entry: arrayPos.entrySet()) {
+						
+						// To find the vertex with position i, and check if it has been visited
+						if(entry.getValue() == i && unvisited.containsKey(entry.getKey())) {
+							current = unvisited.get(entry.getKey());
 							updated = true;
 						}
 					}
-					if(updated) smallest = distance[i];
+					if(updated) smallest = distance[i]; // Updates the smallest distance
 				}
 			}
 			

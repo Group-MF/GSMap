@@ -5,8 +5,8 @@ public class Extractor {
 	private Scanner file;
 	private PrintWriter output;
 	int count = 0;
-	public TreeMap<String, String[]> vertices;	// String array [nodeNum, vertexLabel, type, x pos, y pos]
-	public HashMap<String[], Double> edges; 	// String array [edge ID, nodeLabel1, nodeLabel2]
+	public TreeMap<String, String[]> vertices;	// String is nodeID from graph file, Array content [nodeNum, vertexLabel, type, x pos, y pos]
+	public HashMap<String[], Double> edges; 	//Array content [edge ID, nodeLabel1, nodeLabel2], weight
 	
 	public Extractor(String filename){
 		output = null;
