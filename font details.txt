@@ -4,6 +4,6 @@ colours
 #554B81 //purple tertiary color
 
 #white basic background
-#e6e6e6 //header and footer
+#e6e6e6 //header 134dp and footer 100dp
 
 title: font gotham medium light
