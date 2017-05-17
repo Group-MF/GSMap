@@ -1,5 +1,9 @@
-colour #bb9b62 //gold
-font gotham medium light
+colours
+#bb9b62 //gold
 #3D756D //teal secondary colour
 #554B81 //purple tertiary color
+
 #white basic background
+#e6e6e6 //header and footer
+
+title: font gotham medium light
