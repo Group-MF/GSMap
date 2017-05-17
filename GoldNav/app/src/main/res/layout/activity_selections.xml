@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.groupm.goldNav.selections">
+
+    <ImageView
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="#E6E6E6" />
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="134dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="#E6E6E6" />
+
+    <TextView
+        android:id="@+id/goldsmiths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goldsmiths"
+        android:textAlignment="center"
+        android:textColor="#bb9b62"
+        android:textSize="66sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <TextView
+        android:id="@+id/campusNavigator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Campus Navigator"
+        android:textColor="#3D756D"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="@+id/goldsmiths"
+        app:layout_constraintTop_toBottomOf="@+id/goldsmiths" />
+
+    <TextView
+        android:id="@+id/groupM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group M 2016 - 2017"
+        app:layout_constraintBottom_toTopOf="@+id/Bez"
+        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths" />
+
+    <TextView
+        android:id="@+id/marcellino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Marcellino Samuels"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/joel" />
+
+    <TextView
+        android:id="@+id/joel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Joel Mayner"
+        app:layout_constraintBottom_toTopOf="@+id/marcellino"
+        app:layout_constraintLeft_toLeftOf="@+id/Bez" />
+
+    <TextView
+        android:id="@+id/Bez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bezhad Karimizad"
+        app:layout_constraintBottom_toTopOf="@+id/joel"
+        app:layout_constraintLeft_toLeftOf="@+id/groupM" />
+
+    <Button
+        android:id="@+id/showMap"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pathwinding"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="160dp" />
+
+
+</android.support.constraint.ConstraintLayout>
