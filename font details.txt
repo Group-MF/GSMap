@@ -1,0 +1,5 @@
+colour #bb9b62 //gold
+font gotham medium light
+#3D756D //teal secondary colour
+#554B81 //purple tertiary color
+#white basic background
