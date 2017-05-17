@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="groupm.goldnav.splash_screen">
+    tools:context="com.groupm.myapplication.SplashScreen">
 
     <TextView
+        android:id="@+id/goldsmiths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/goldsmiths"
+        android:textAlignment="center"
+        android:textColor="#bb9b62"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:id="@+id/campusNavigator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CAMPUS NAVIGATOR"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="98dp" />
+
+    <TextView
+        android:id="@+id/groupM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@ Group M 2016 - 2017"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="418dp" />
+
+    <TextView
+        android:id="@+id/marcellino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marcellino Samuels"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <TextView
+        android:id="@+id/joel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Joel Mayner"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="452dp" />
+
+    <TextView
+        android:id="@+id/Bez"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bezhad Karimizad"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="435dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/Goldsmiths-Map-Navigator-sp" />
 
 </android.support.constraint.ConstraintLayout>
