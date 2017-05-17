@@ -6,68 +6,124 @@
     android:layout_height="match_parent"
     tools:context="com.groupm.myapplication.SplashScreen">
 
+    <ImageView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="#e6e6e6" />
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="134dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="#e6e6e6" />
+
     <TextView
         android:id="@+id/goldsmiths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/goldsmiths"
+        android:text="Goldsmiths"
         android:textAlignment="center"
         android:textColor="#bb9b62"
-        android:textSize="60sp"
+        android:textSize="66sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.031" />
 
     <TextView
         android:id="@+id/campusNavigator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAMPUS NAVIGATOR"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="98dp" />
+        android:layout_marginRight="-9dp"
+        android:layout_marginTop="-12dp"
+        android:text="Campus Navigator"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="@+id/goldsmiths"
+        app:layout_constraintTop_toBottomOf="@+id/goldsmiths" />
 
     <TextView
         android:id="@+id/groupM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@ Group M 2016 - 2017"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="418dp" />
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:text="Group M 2016 - 2017"
+        app:layout_constraintBottom_toTopOf="@+id/Bez"
+        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths" />
 
     <TextView
         android:id="@+id/marcellino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Marcellino Samuels"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="469dp" />
+        android:layout_marginLeft="-7dp"
+        app:layout_constraintLeft_toLeftOf="@+id/joel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/joel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Joel Mayner"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="452dp" />
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/Bez"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/marcellino" />
 
     <TextView
         android:id="@+id/Bez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bezhad Karimizad"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="435dp" />
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/groupM"
+        android:layout_marginBottom="-1dp"
+        app:layout_constraintBottom_toTopOf="@+id/joel" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <TextView
+        android:id="@+id/Start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/Goldsmiths-Map-Navigator-sp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Touch to Start"
+        android:textColor="#bb9b62"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
+        app:layout_constraintVertical_bias="0.721"
+        app:layout_constraintHorizontal_bias="0.502" />
 
 </android.support.constraint.ConstraintLayout>
