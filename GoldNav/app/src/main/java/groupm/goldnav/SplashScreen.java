@@ -16,7 +16,7 @@ public class SplashScreen extends AppCompatActivity {
 		ConstraintLayout splashScreen = (ConstraintLayout)findViewById(R.id.screen1);
 		splashScreen.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				Intent nextPage = new Intent(v.getContext(), selections.class);
+				Intent nextPage = new Intent(v.getContext(), Selections.class);
 				startActivityForResult(nextPage, 0);
 			}
 		});

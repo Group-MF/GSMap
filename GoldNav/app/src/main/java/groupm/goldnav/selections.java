@@ -3,7 +3,7 @@ package groupm.goldnav;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class selections extends AppCompatActivity {
+public class Selections extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
