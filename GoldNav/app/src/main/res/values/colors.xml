@@ -6,5 +6,6 @@
     <color name="colorGold">#BB9B62</color>
     <color name="colorTeal">#3D756D</color>
     <color name="colorPurple">#554B81</color>
-    <color name="colorBasic">#E6E6E6</color>
+    <color name="colorGrey">#E6E6E6</color>
+    <color name="colorWhite">#FFF</color>
 </resources>

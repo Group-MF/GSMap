@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.groupm.goldNav.selections">
+    tools:context="groupm.goldnav.selections">
 
     <ImageView
         android:id="@+id/footer"
@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="#E6E6E6" />
+        app:srcCompat="@color/colorGrey" />
 
     <ImageView
         android:id="@+id/header"
@@ -28,7 +28,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="#E6E6E6" />
+        app:srcCompat="@color/colorGrey" />
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Group M 2016 - 2017"
-        app:layout_constraintBottom_toTopOf="@+id/Bez"
+        app:layout_constraintBottom_toTopOf="@+id/bez"
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths" />
 
     <TextView
@@ -81,10 +81,10 @@
         android:layout_height="wrap_content"
         android:text="Joel Mayner"
         app:layout_constraintBottom_toTopOf="@+id/marcellino"
-        app:layout_constraintLeft_toLeftOf="@+id/Bez" />
+        app:layout_constraintLeft_toLeftOf="@+id/bez" />
 
     <TextView
-        android:id="@+id/Bez"
+        android:id="@+id/bez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bezhad Karimizad"

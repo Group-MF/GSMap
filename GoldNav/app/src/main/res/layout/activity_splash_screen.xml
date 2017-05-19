@@ -2,24 +2,26 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="SplashScreen">
+    android:background="@color/colorWhite"
+    tools:context="groupm.goldnav.SplashScreen">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="26dp"
         android:contentDescription="@string/background_image_zero"
         android:scaleType="fitXY"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -35,32 +37,31 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032"/>
+        app:layout_constraintVertical_bias="0.032" />
 
     <TextView
-        android:id="@+id/campusNavigator"
-        android:layout_width="337dp"
-        android:layout_height="23dp"
+        android:id="@+id/campusNavi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="-1dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:gravity="end"
         android:includeFontPadding="false"
         android:text="@string/campus_navigator"
         android:textAlignment="textEnd"
-        android:gravity="end"
         android:textColor="#3D756D"
-        android:textSize="18sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/groupM"
@@ -68,10 +69,10 @@
         android:layout_height="wrap_content"
         android:text="@string/group_m_2016_2017"
         android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/Bez"
-        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
-        tools:text="Group M - 2016-17"/>
+        app:layout_constraintBottom_toTopOf="@+id/bez"
+        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths" />
 
     <TextView
         android:id="@+id/marcellino"
@@ -80,8 +81,10 @@
         android:layout_marginBottom="16dp"
         android:text="@string/marcellino_samuels"
         android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/joel"/>
+        android:layout_marginRight="-8dp"
+        app:layout_constraintRight_toRightOf="@+id/joel" />
 
     <TextView
         android:id="@+id/joel"
@@ -89,17 +92,23 @@
         android:layout_height="wrap_content"
         android:text="@string/joel_mayner"
         android:textColor="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/marcellino"
-        app:layout_constraintLeft_toLeftOf="@+id/Bez"/>
+        android:textSize="12sp"
+        android:layout_marginRight="7dp"
+        app:layout_constraintRight_toRightOf="@+id/goldsmiths"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/marcellino" />
 
     <TextView
-        android:id="@+id/Bez"
+        android:id="@+id/bez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bezhad_karimizad"
         android:textColor="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/joel"
-        app:layout_constraintLeft_toLeftOf="@+id/groupM"/>
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/groupM"
+        android:layout_marginLeft="-7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:id="@+id/Start"
@@ -121,8 +130,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.799"
-        tools:text="TOUCH TO START"/>
-
+        app:layout_constraintVertical_bias="0.834"
+        tools:text="@string/touch_to_start" />
 
 </android.support.constraint.ConstraintLayout>
