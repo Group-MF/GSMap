@@ -5,11 +5,14 @@ import java.io.*;
 
 public class Searcher {
 	private HashMap<String,HashSet<String>> rtv_f1, rtv_f2, rtv_f3;
+	private String[] rooms;
+    private String[] destinations;
 
 	public Searcher() throws IOException{
 		rtv_f1 = createRTV("RHB_F1_RTN.txt", rtv_f1);
 		rtv_f2 = createRTV("RHB_F2_RTN.txt", rtv_f2);
 		rtv_f3 = createRTV("RHB_F3_RTN.txt", rtv_f3);
+		destinations = new String[rtv_f1.size() + rtv_f2.size() + rtv_f3.size()];
 	}
 
 	private HashMap<String,HashSet<String>> createRTV(String filename, HashMap<String,HashSet<String>> roomToVertex) throws IOException {
@@ -26,6 +29,30 @@ public class Searcher {
 			}
 		}
 		return roomToVertex;
+	}
+
+	private void createArray() {
+		int count = 0;
+		for(String name: rtv_f1.keySet()) {
+			destinations[count] = name;
+			count++;
+		}
+		for(String name: rtv_f2.keySet()) {
+			destinations[count] = name;
+			count++;
+		}
+		for(String name: rtv_f3.keySet()) {
+			destinations[count] = name;
+			count++;
+		}
+	}
+
+    public String[] getRooms() {
+        return rooms;
+    }
+
+	public String[] getDestinations() {
+		return destinations;
 	}
 	
 	public ArrayList<String> findVertex(String location) { // searches building to find the vertices associated with the locations
