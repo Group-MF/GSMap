@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/showRHB"
+    android:id="@+id/FindRoom"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="groupm.goldnav.ShowRHB">
+    tools:context="groupm.goldnav.ShowMap">
 
 
     <ImageView
@@ -20,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@color/colorGrey"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/footer"
@@ -33,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@color/colorGrey"
-        tools:ignore="ContentDescription"/>
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -54,7 +53,7 @@
         app:layout_constraintRight_toRightOf="@+id/header"
         app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.03"
-        tools:text="@string/goldsmiths"/>
+        tools:text="@string/goldsmiths" />
 
     <TextView
         android:id="@+id/campusNavigator"
@@ -71,7 +70,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        tools:text="@string/campus"/>
+        tools:text="@string/campus" />
 
     <TextView
         android:id="@+id/FromLabel"
@@ -89,7 +88,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <AutoCompleteTextView
         android:id="@+id/enterLocation"
@@ -101,14 +100,14 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:completionHint="current location"
+        android:completionHint="Please enter destination"
         android:text="@string/destination"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.36"/>
+        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/toLabel"
@@ -127,7 +126,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <AutoCompleteTextView
         android:id="@+id/enterDestination"
@@ -139,8 +138,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-
-        android:completionHint="Please enter destination"
+        android:completionHint="Please enter the closest room"
         android:saveEnabled="false"
         android:selectAllOnFocus="false"
         android:text="@string/location"
@@ -149,23 +147,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.100000024"/>
+        app:layout_constraintVertical_bias="0.071" />
 
     <CheckBox
         android:id="@+id/filter_accessibility"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:text="accessibility"
+        android:onClick="toggleAccess"
+        android:text="@string/accessibility"
         app:layout_constraintBottom_toBottomOf="@+id/wheelchair"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/wheelchair"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/wheelchair"
-        app:layout_constraintVertical_bias="0.5"/>
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
         android:id="@+id/wheelchair"
@@ -173,29 +172,32 @@
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="24dp"
         android:contentDescription=""
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterLocation"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/wheelchair"/>
+        app:layout_constraintVertical_bias="0.031"
+        app:srcCompat="@drawable/wheelchair"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <CheckBox
-        android:id="@+id/filter_through_room"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
+        android:id="@+id/filter_large_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
+        android:onClick="toggleLargeRoom"
         android:text="@string/restricted"
-        app:layout_constraintBottom_toTopOf="@+id/filter_fire_escape"
+        app:layout_constraintBottom_toBottomOf="@+id/restricted"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/restricted"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter_accessibility"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintTop_toTopOf="@+id/restricted" />
 
     <ImageView
         android:id="@+id/restricted"
@@ -203,7 +205,7 @@
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/no_entry"
         app:layout_constraintBottom_toTopOf="@+id/footer"
@@ -211,31 +213,32 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterLocation"
-        app:layout_constraintVertical_bias="0.495"/>
+        app:layout_constraintVertical_bias="0.536" />
 
     <CheckBox
-        android:id="@+id/filter_fire_escape"
+        android:id="@+id/filter_fire_exit"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fire_escape"
+        android:onClick="toggleFireExits"
+        android:text="@string/escape"
+        app:layout_constraintBottom_toBottomOf="@+id/fire_exit"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/fire_escape"
+        app:layout_constraintLeft_toRightOf="@+id/fire_exit"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/fire_escape"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="@string/escape"/>
+        app:layout_constraintTop_toTopOf="@+id/fire_exit"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
-        android:id="@+id/fire_escape"
+        android:id="@+id/fire_exit"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="false"
         android:background="@drawable/fire_exit"
@@ -248,7 +251,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterLocation"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="0.992" />
 
 
 </android.support.constraint.ConstraintLayout>

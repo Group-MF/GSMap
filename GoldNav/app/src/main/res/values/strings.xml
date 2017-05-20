@@ -2,17 +2,14 @@
     <string name="app_name">GoldNav</string>
     <string name="goldsmiths">Goldsmiths</string>
     <string name="campus">Campus Navigator</string>
-    <string name="background_image_zero">background image zero</string>
-
     <string name="group_m">Group M 2016 - 2017</string>
     <string name="joel">Joel Mayner</string>
-    <string name="marcy">Marcellino Samuels</string>
+    <string name="marci">Marcellino Samuels</string>
     <string name="bez">Bezhad Karimizadehbehbahani</string>
     <string name="thamir">Thamir Suwar</string>
-
-    <string name="touch">Touch to Start</string>
+    <string name="start">Touch to Start</string>
     <string name="accessibility">Accessibility</string>
-    <string name="restricted">Include through-way rooms (usually restricted)</string>
+    <string name="restricted">Shortcut through classrooms</string>
     <string name="escape">Include Emergency Exits</string>
     <string name="destination">Destination</string>
     <string name="location">Current Location</string>

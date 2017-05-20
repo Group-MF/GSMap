@@ -17,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name="groupm.goldnav.Selections" />
-        <activity android:name="groupm.goldnav.ShowRHB" />
         <activity android:name="groupm.goldnav.FindRoom" />
+        <activity android:name="groupm.goldnav.ShowMap" />
     </application>
 
 </manifest>
