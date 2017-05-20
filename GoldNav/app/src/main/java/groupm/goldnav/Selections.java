@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import com.R;
 
 public class Selections extends AppCompatActivity {
@@ -17,13 +16,18 @@ public class Selections extends AppCompatActivity {
 
     // Adds click listener to find room button
     public void openFindRoom(View v) {
-        Intent i = new Intent(v.getContext(), FindRoom.class);
+        Intent i = new Intent(this, FindRoom.class);
         startActivity(i);
+        finish();
     }
 
     // Adds click listener to show map button
     public void openShowMap(View v) {
-        Intent i = new Intent(v.getContext(), ShowRHB.class);
-        startActivity(i);
+        Intent j = new Intent(this, ShowMap.class);
+        startActivity(j);
+        finish();
+    }
+
+    public void onBackPressed() {
     }
 }

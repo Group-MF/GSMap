@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/screen2"
+    android:id="@+id/selections"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
@@ -19,7 +18,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@color/colorGrey"/>
+        app:srcCompat="@color/colorGrey" />
 
     <ImageView
         android:id="@+id/footer"
@@ -31,7 +30,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@color/colorGrey"/>
+        app:srcCompat="@color/colorGrey" />
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -52,7 +51,7 @@
         app:layout_constraintRight_toRightOf="@+id/header"
         app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.03"
-        tools:text="@string/goldsmiths"/>
+        tools:text="@string/goldsmiths" />
 
     <TextView
         android:id="@+id/campusNavigator"
@@ -69,33 +68,10 @@
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        tools:text="@string/campus"
-        />
+        tools:text="@string/campus" />
 
     <Button
-        android:id="@+id/findRoom"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
-        android:layout_height="158dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-
-        android:layout_marginTop="8dp"
-        android:background="@drawable/show_map_button"
-        android:onClick="openFindRoom"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.814"/>
-
-    <Button
-        android:id="@+id/showMap"
+        android:id="@+id/findRoomB"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="0dp"
         android:layout_height="158dp"
@@ -106,14 +82,32 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/find_room_button"
+        android:onClick="openFindRoom"
+        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/header"
+        app:layout_constraintVertical_bias="0.376" />
+
+    <Button
+        android:id="@+id/showMapB"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="158dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/show_map_button"
         android:onClick="openShowMap"
         app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.376"
-        />
-
+        app:layout_constraintVertical_bias="0.814" />
 
 </android.support.constraint.ConstraintLayout>
