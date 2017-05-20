@@ -180,27 +180,26 @@
     <CheckBox
         android:id="@+id/filter_restricted_access"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:text="Restricted Acces"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/restricted"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/filter_accessibility"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter_fire_escape"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/restricted"
+        app:layout_constraintTop_toTopOf="@+id/restricted"/>
 
     <ImageView
         android:id="@+id/restricted"
         android:layout_width="47dp"
         android:layout_height="43dp"
         android:background="@drawable/no_entry"
-        app:srcCompat="@drawable/wheelchair"
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="418dp"/>
+        tools:layout_editor_absoluteY="448dp"
+        tools:layout_editor_absoluteX="16dp"/>
 
     <CheckBox
         android:id="@+id/filter_fire_escape"
@@ -210,7 +209,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:text="Fire Escape Access"
+        android:text="@string/include_fire_escape"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/filter_accessibility"
@@ -222,12 +221,9 @@
         android:id="@+id/fire_escape"
         android:layout_width="47dp"
         android:layout_height="43dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterLocation"
         app:srcCompat="@drawable/wheelchair"
-        />
+        tools:layout_editor_absoluteY="399dp"
+        tools:layout_editor_absoluteX="16dp"/>
 
 
 </android.support.constraint.ConstraintLayout>
