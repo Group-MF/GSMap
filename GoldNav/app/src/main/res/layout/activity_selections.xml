@@ -74,7 +74,7 @@
     <Button
         android:id="@+id/findRoom"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -94,7 +94,7 @@
     <Button
         android:id="@+id/showMap"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
