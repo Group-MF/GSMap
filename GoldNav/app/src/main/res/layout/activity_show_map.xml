@@ -59,6 +59,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
+        android:hapticFeedbackEnabled="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
@@ -73,16 +74,19 @@
         android:layout_width="180dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
         android:adjustViewBounds="true"
+        android:foreground="@drawable/button_down"
+        android:hapticFeedbackEnabled="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/footer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/upButton"
         app:layout_constraintRight_toRightOf="@+id/footer"
         app:layout_constraintTop_toBottomOf="@+id/renderMap"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/button_down"
-        />
+        app:layout_constraintVertical_bias="0.0"/>
 
     <ImageSwitcher
         android:id="@+id/renderMap"
