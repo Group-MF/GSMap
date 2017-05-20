@@ -5,7 +5,7 @@
     android:id="@+id/showRHB"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="groupm.goldnav.ShowRHB">
+    tools:context="groupm.goldnav.ShowMap">
 
     <ImageView
         android:id="@+id/footer"
@@ -48,6 +48,22 @@
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="@+id/header"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/renderMap"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.0"/>
 
     <ImageButton
@@ -92,7 +108,7 @@
         android:id="@+id/renderMap"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:foreground="@color/colorTeal"
+        android:foreground="@drawable/rhb_f1"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
