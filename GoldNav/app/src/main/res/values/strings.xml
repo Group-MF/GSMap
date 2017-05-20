@@ -11,4 +11,6 @@
     <string name="accessibility">Accessibility</string>
     <string name="through_Room">Include Large Rooms</string>
     <string name="fire_escape">Include Fire Escapes</string>
+    <string name="location">Current Location</string>
+    <string name="destination">Destination</string>
 </resources>
