@@ -51,7 +51,7 @@
         android:id="@+id/campusNavigator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/campus_navi"
+        android:text="@string/campus"
         android:textColor="#3D756D"
         android:textSize="23sp"
         android:textStyle="bold"
