@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoldNav</string>
+    <string name="campus_navi">Campus Navigator</string>
+    <string name="goldsmiths">Goldsmiths</string>
+    <string name="background_image_zero">background image zero</string>
+    <string name="bezhad_karimizad">Bezhad Karimizad</string>
+    <string name="group_m_2016_2017">Group M 2016 - 2017</string>
+    <string name="joel_mayner">Joel Mayner</string>
+    <string name="marcellino_samuels">Marcellino Samuels</string>
+    <string name="touch_to_start">Touch to Start</string>
+</resources>
