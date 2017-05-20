@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/header"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="138dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -22,7 +22,7 @@
 
     <ImageView
         android:id="@+id/footer"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,7 +47,6 @@
         app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.03"
         tools:text="@string/goldsmiths"
-        android:layout_marginTop="0dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         app:layout_constraintRight_toRightOf="@+id/header"
@@ -70,13 +69,13 @@
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
         tools:text="@string/campus_navi"
-        android:layout_marginTop="0dp" />
+        />
 
 
     <Button
         android:id="@+id/findRoom"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -88,12 +87,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.814"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
 
     <Button
         android:id="@+id/showMap"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
@@ -106,7 +107,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.376"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"/>
 
 
 </android.support.constraint.ConstraintLayout>
