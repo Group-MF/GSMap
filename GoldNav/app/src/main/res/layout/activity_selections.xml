@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/header"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="138dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -22,7 +22,7 @@
 
     <ImageView
         android:id="@+id/footer"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,6 +47,7 @@
         app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.03"
         tools:text="@string/goldsmiths"
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         app:layout_constraintRight_toRightOf="@+id/header"
@@ -68,22 +69,20 @@
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        tools:text="@string/campus_navi" />
+        tools:text="@string/campus_navi"
+        android:layout_marginTop="0dp" />
 
 
     <Button
         android:id="@+id/findRoom"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/show_map_button"
-        android:onClick="openFindRoom"
         app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -94,16 +93,14 @@
     <Button
         android:id="@+id/showMap"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="158dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/find_room_button"
-        android:onClick="openShowMap"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/footer"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
