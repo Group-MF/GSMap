@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash"
@@ -13,14 +14,15 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/imageview"
         android:scaleType="fitXY"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -61,7 +63,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
         android:id="@+id/groupM"
@@ -72,43 +74,49 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/bez"
-        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths" />
+        app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"/>
 
     <TextView
         android:id="@+id/marcellino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginRight="-8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/marci"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/joel" />
+        app:layout_constraintRight_toRightOf="@+id/joel"/>
 
     <TextView
         android:id="@+id/joel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/joel"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/marcellino"
-        app:layout_constraintRight_toRightOf="@+id/goldsmiths" />
+        app:layout_constraintRight_toRightOf="@+id/goldsmiths"/>
 
     <TextView
         android:id="@+id/bez"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="-7dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="-8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/bez"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@+id/groupM" />
+        app:layout_constraintLeft_toLeftOf="@+id/groupM"/>
 
     <TextView
         android:id="@+id/Start"
@@ -126,11 +134,11 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.82"
-        tools:text="@string/start" />
+        app:layout_constraintVertical_bias="0.8"
+        tools:text="@string/start"/>
 
 </android.support.constraint.ConstraintLayout>

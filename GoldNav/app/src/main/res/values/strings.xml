@@ -16,4 +16,11 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="go">Go</string>
+    <string name="header">header</string>
+    <string name="upbutton">upButton</string>
+    <string name="downbutton">downButton</string>
+    <string name="wheelchair">wheelchair</string>
+    <string name="restrictedsymbol">restrictedSymbol</string>
+    <string name="imageview">imageView</string>
+    <string name="footer">footer</string>
 </resources>

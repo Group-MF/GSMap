@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/selections"
@@ -12,25 +13,27 @@
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="138dp"
+        android:contentDescription="@string/header"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@color/colorGrey" />
+        app:srcCompat="@color/colorGrey"/>
 
     <ImageView
         android:id="@+id/footer"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/footer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@color/colorGrey" />
+        app:srcCompat="@color/colorGrey"/>
 
     <TextView
         android:id="@+id/goldsmiths"
@@ -51,7 +54,7 @@
         app:layout_constraintRight_toRightOf="@+id/header"
         app:layout_constraintTop_toTopOf="@+id/header"
         app:layout_constraintVertical_bias="0.03"
-        tools:text="@string/goldsmiths" />
+        tools:text="@string/goldsmiths"/>
 
     <TextView
         android:id="@+id/campusNavigator"
@@ -68,7 +71,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toBottomOf="@+id/goldsmiths"
-        tools:text="@string/campus" />
+        tools:text="@string/campus"/>
 
     <Button
         android:id="@+id/findRoomB"
@@ -88,7 +91,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.376"/>
 
     <Button
         android:id="@+id/showMapB"
@@ -108,6 +111,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/header"
-        app:layout_constraintVertical_bias="0.814" />
+        app:layout_constraintVertical_bias="0.814"/>
 
 </android.support.constraint.ConstraintLayout>
