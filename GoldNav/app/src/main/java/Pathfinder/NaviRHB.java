@@ -4,9 +4,6 @@ import java.util.*;
 import java.io.*;
 
 public class NaviRHB {
-	Extractor RHB_F1_E;
-	Extractor RHB_F2_E;
-	Extractor RHB_F3_E;
 	GraphMaker RHB_F1;
 	GraphMaker RHB_F2;
 	GraphMaker RHB_F3;
@@ -20,16 +17,7 @@ public class NaviRHB {
 		makeSearcher();
 		start = RHB_RTV.findVertex(st).get(0);
 	}
-	
-	public void extractInfo() {
-		RHB_F1_E = new Extractor("RHB_Layout_F1.txt");
-		RHB_F2_E = new Extractor("RHB_Layout_F2.txt");
-		RHB_F3_E = new Extractor("RHB_Layout_F3.txt");
-		RHB_F1_E.printFile();
-		RHB_F2_E.printFile();
-		RHB_F3_E.printFile();
-	}
-	
+
 	private void makeGraph() {
 		try {
 			RHB_F1 = new GraphMaker("RHB_Layout_F1_info.txt", "F1_");

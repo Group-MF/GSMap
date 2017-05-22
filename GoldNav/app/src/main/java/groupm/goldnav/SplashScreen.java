@@ -19,8 +19,8 @@ public class SplashScreen extends AppCompatActivity {
 		// Adds click listener to whole screen
 		ConstraintLayout splashScreen = (ConstraintLayout)findViewById(R.id.splash);
 		splashScreen.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startActivity(new Intent(v.getContext(), Selections.class));
+			public void onClick(View view) {
+				startActivity(new Intent(view.getContext(), Selections.class));
 				finish();
 			}
 		});
