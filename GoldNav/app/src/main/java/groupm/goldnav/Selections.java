@@ -17,13 +17,13 @@ public class Selections extends AppCompatActivity {
     }
 
     // Adds click listener to find room button
-    public void openFindRoom(View v) {
+    public void openFindRoom(View view) {
         startActivity(new Intent(this, FindRoom.class));
         finish();
     }
 
     // Adds click listener to show map button
-    public void openShowMap(View v) {
+    public void openShowMap(View view) {
         startActivity(new Intent(this, ShowMap.class));
         finish();
     }

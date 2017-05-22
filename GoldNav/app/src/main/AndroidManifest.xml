@@ -8,16 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/goldnav_logo"
         android:supportsRtl="true"
-<<<<<<< HEAD
-
-        android:screenOrientation="portrait"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
->
-
-
-=======
         android:theme="@style/AppTheme">
->>>>>>> origin/master
         <activity android:name="groupm.goldnav.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +19,7 @@
         <activity android:name="groupm.goldnav.Selections"/>
         <activity android:name="groupm.goldnav.FindRoom"/>
         <activity android:name="groupm.goldnav.ShowMap"/>
-        <activity android:name="groupm.goldnav.Pathfinder"/>
+        <activity android:name="groupm.goldnav.Path"/>
     </application>
 
 </manifest>

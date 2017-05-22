@@ -1,23 +1,31 @@
 package Pathfinder;
 
+import android.content.res.AssetManager;
+
 import java.util.*;
 import java.io.*;
 
 public class Searcher {
 	private HashMap<String,HashSet<String>> rtv_f1, rtv_f2, rtv_f3;
-	private String[] rooms;
-    private String[] destinations;
+    private String[] rooms;
 
-	public Searcher() throws IOException{
-		rtv_f1 = createRTV("../../assets/textInfo/RHB_F1_RTN.txt", rtv_f1);
-		rtv_f2 = createRTV("../../assets/textInfo/RHB_F2_RTN.txt", rtv_f2);
-		rtv_f3 = createRTV("../../assets/textInfo/RHB_F3_RTN.txt", rtv_f3);
-		destinations = new String[rtv_f1.size() + rtv_f2.size() + rtv_f3.size()];
+    public Searcher() throws IOException{
+        /*rtv_f1 = createRTV(assets.open("RHB_F1_RTN.txt"), rtv_f1);
+        rtv_f2 = createRTV(assets.open("RHB_F2_RTN.txt"), rtv_f2);
+        rtv_f3 = createRTV(assets.open("RHB_F3_RTN.txt"), rtv_f3);
+        destinations = new String[rtv_f1.size() + rtv_f2.size() + rtv_f3.size()];*/
+    }
+
+	public Searcher(AssetManager assets) throws IOException{
+		rtv_f1 = createRTV(assets.open("RHB_F1_RTN.txt"), rtv_f1);
+		rtv_f2 = createRTV(assets.open("RHB_F2_RTN.txt"), rtv_f2);
+		rtv_f3 = createRTV(assets.open("RHB_F3_RTN.txt"), rtv_f3);
+        createArray();
 	}
 
-	private HashMap<String,HashSet<String>> createRTV(String filename, HashMap<String,HashSet<String>> roomToVertex) throws IOException {
+	private HashMap<String,HashSet<String>> createRTV(InputStream fileInput, HashMap<String,HashSet<String>> roomToVertex) throws IOException {
 		roomToVertex = new HashMap<String,HashSet<String>>();
-		Scanner file = new Scanner(new File(filename));
+		Scanner file = new Scanner(fileInput);
 
 		while(file.hasNextLine()) {
 			String temp = file.nextLine();
@@ -32,28 +40,22 @@ public class Searcher {
 	}
 
 	private void createArray() {
-		int count = 0;
-		for(String name: rtv_f1.keySet()) {
-			destinations[count] = name;
-			count++;
+		TreeSet<String> temp = new TreeSet<String>();
+		for(HashSet roomSet: rtv_f1.values()) {
+            temp.addAll(roomSet);
 		}
-		for(String name: rtv_f2.keySet()) {
-			destinations[count] = name;
-			count++;
+		for(HashSet roomSet: rtv_f2.values()) {
+            temp.addAll(roomSet);
 		}
-		for(String name: rtv_f3.keySet()) {
-			destinations[count] = name;
-			count++;
+		for(HashSet roomSet: rtv_f3.values()) {
+            temp.addAll(roomSet);
 		}
+		rooms = temp.toArray(new String[temp.size()]);
 	}
 
     public String[] getRooms() {
         return rooms;
     }
-
-	public String[] getDestinations() {
-		return destinations;
-	}
 	
 	public ArrayList<String> findVertex(String location) { // searches building to find the vertices associated with the locations
 		ArrayList<String> vertexLabel = new ArrayList<String>(); // Used a list as locations can be accessed to multiple vertex
