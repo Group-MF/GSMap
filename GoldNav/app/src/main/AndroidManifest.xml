@@ -4,16 +4,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/gold_nav_logo"
+        android:icon="@drawable/goldnav_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/gold_nav_logo"
+        android:roundIcon="@drawable/goldnav_logo"
         android:supportsRtl="true"
+<<<<<<< HEAD
 
         android:screenOrientation="portrait"
         android:theme="@style/Theme.AppCompat.NoActionBar"
 >
 
 
+=======
+        android:theme="@style/AppTheme">
+>>>>>>> origin/master
         <activity android:name="groupm.goldnav.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="groupm.goldnav.Selections" />
-        <activity android:name="groupm.goldnav.FindRoom" />
-        <activity android:name="groupm.goldnav.ShowMap" />
+        <activity android:name="groupm.goldnav.Selections"/>
+        <activity android:name="groupm.goldnav.FindRoom"/>
+        <activity android:name="groupm.goldnav.ShowMap"/>
+        <activity android:name="groupm.goldnav.Pathfinder"/>
     </application>
 
 </manifest>

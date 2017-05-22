@@ -137,7 +137,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.8"
+        app:layout_constraintVertical_bias="0.819"
         tools:text="@string/start"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -11,8 +11,8 @@
     <string name="accessibility">Accessibility</string>
     <string name="restricted">Shortcut through classrooms</string>
     <string name="escape">Include Emergency Exits</string>
-    <string name="destination">Destination</string>
-    <string name="location">Current Location</string>
+    <string name="destination">Please enter your destination</string>
+    <string name="location">Please enter the closest room</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="go">Go</string>

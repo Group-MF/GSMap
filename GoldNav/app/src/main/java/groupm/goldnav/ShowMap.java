@@ -1,6 +1,7 @@
 package groupm.goldnav;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ public class ShowMap extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_map);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     /*
     //onClick up button
@@ -40,7 +42,6 @@ public class ShowMap extends AppCompatActivity {
     }
     */
     public void onBackPressed() {
-        Intent i = new Intent(this, Selections.class);
-        startActivity(i);
+        startActivity(new Intent(this, Selections.class));
     }
 }
