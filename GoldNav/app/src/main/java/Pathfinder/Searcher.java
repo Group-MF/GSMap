@@ -9,13 +9,6 @@ public class Searcher {
 	private HashMap<String,HashSet<String>> rtv_f1, rtv_f2, rtv_f3;
     private String[] rooms;
 
-    public Searcher() throws IOException{
-        /*rtv_f1 = createRTV(assets.open("RHB_F1_RTN.txt"), rtv_f1);
-        rtv_f2 = createRTV(assets.open("RHB_F2_RTN.txt"), rtv_f2);
-        rtv_f3 = createRTV(assets.open("RHB_F3_RTN.txt"), rtv_f3);
-        destinations = new String[rtv_f1.size() + rtv_f2.size() + rtv_f3.size()];*/
-    }
-
 	public Searcher(AssetManager assets) throws IOException{
 		rtv_f1 = createRTV(assets.open("RHB_F1_RTN.txt"), rtv_f1);
 		rtv_f2 = createRTV(assets.open("RHB_F2_RTN.txt"), rtv_f2);

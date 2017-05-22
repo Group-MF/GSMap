@@ -19,7 +19,9 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.117"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/testEnd"
@@ -34,5 +36,14 @@
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.441" />
+        app:layout_constraintVertical_bias="0.441"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="147dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="8dp" />
 </android.support.constraint.ConstraintLayout>

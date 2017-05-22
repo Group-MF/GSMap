@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com">
+    package="com">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/goldnav_logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/goldnav_logo"
-<<<<<<< HEAD
-        android:screenOrientation="portrait"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
-
-=======
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
->>>>>>> origin/master
         <activity android:name="groupm.goldnav.SplashScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name="groupm.goldnav.Selections"/>
