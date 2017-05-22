@@ -9,21 +9,6 @@
     tools:context="groupm.goldnav.ShowMap">
 
     <ImageView
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="0dp"
-        android:backgroundTint="@color/colorGold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/upButton"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@color/colorGrey"
-        tools:ignore="ContentDescription"/>
-
-    <ImageView
         android:id="@+id/header"
         android:layout_width="383dp"
         android:layout_height="73dp"
@@ -35,68 +20,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@color/colorGrey"/>
-
-    <TextView
-        android:id="@+id/entryTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-
-        android:contentDescription="@string/destination"
-        android:text="@string/destination"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/DisplayTo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/entryFrom"
-        app:layout_constraintRight_toRightOf="@+id/header"/>
-
-    <TextView
-        android:id="@+id/DisplayTo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-
-        android:layout_marginTop="0dp"
-        android:gravity="end"
-        android:text="@string/to"
-        android:textAlignment="textEnd"
-        android:textColor="@color/colorPurple"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/renderMap"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/DisplayFrom"
-        app:layout_constraintRight_toLeftOf="@+id/entryTo"
-        app:layout_constraintTop_toBottomOf="@+id/DisplayFrom"
-        app:layout_constraintVertical_bias="0.538"/>
-
-    <TextView
-        android:id="@+id/DisplayFrom"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/from"
-        android:textColor="@color/colorTeal"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/renderMap"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/header"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        />
 
     <TextView
         android:id="@+id/entryFrom"
@@ -112,47 +35,130 @@
         app:layout_constraintLeft_toRightOf="@+id/DisplayFrom"
         app:layout_constraintRight_toRightOf="@+id/header"/>
 
+    <TextView
+        android:id="@+id/entryTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/destination"
+        android:text="@string/destination"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/DisplayTo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/entryFrom"
+        app:layout_constraintRight_toRightOf="@+id/header"/>
+
+    <TextView
+        android:id="@+id/DisplayFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/from"
+        android:textAlignment="textEnd"
+        android:gravity="end"
+        android:textColor="@color/colorTeal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/renderMap"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/DisplayTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:gravity="end"
+        android:text="@string/to"
+        android:textAlignment="textEnd"
+        android:textColor="@color/colorPurple"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/renderMap"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintLeft_toLeftOf="@+id/DisplayFrom"
+        app:layout_constraintRight_toRightOf="@+id/DisplayFrom"
+        app:layout_constraintTop_toBottomOf="@+id/DisplayFrom"
+        app:layout_constraintVertical_bias="0.538"/>
+
+
+    <ImageView
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-7dp"
+        android:backgroundTint="@color/colorGold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/upButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@color/colorGrey"
+        tools:ignore="ContentDescription"/>
+
     <ImageButton
         android:id="@+id/upButton"
         android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/upbutton"
+        android:foreground="@drawable/button_up"
         android:hapticFeedbackEnabled="true"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="@+id/footer"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/renderMap"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/button_up"/>
+        app:layout_constraintLeft_toLeftOf="@+id/renderMap"
+        app:layout_constraintRight_toLeftOf="@+id/downButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/button_up"
+        tools:layout_editor_absoluteY="504dp"/>
 
     <ImageButton
         android:id="@+id/downButton"
         android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/downbutton"
         android:foreground="@drawable/button_down"
         android:hapticFeedbackEnabled="true"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/footer"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toRightOf="@+id/upButton"
-        app:layout_constraintRight_toRightOf="@+id/footer"
-        app:layout_constraintTop_toBottomOf="@+id/renderMap"
-        app:layout_constraintVertical_bias="0.125"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/renderMap"
+        app:layout_constraintRight_toRightOf="@+id/renderMap"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/button_down"/>
 
     <ImageSwitcher
@@ -162,10 +168,10 @@
         android:foreground="@drawable/rhb_f1"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/footer"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"/>
 
 </android.support.constraint.ConstraintLayout>
