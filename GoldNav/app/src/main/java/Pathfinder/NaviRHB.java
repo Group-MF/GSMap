@@ -11,10 +11,10 @@ public class NaviRHB {
 	String start, finish;
 	LinkedList<String> path;
 	
-	public NaviRHB(String st, String finish) {
+	public NaviRHB(String st, String finish, Searcher RHB) {
 		path = null;
+		RHB_RTV = RHB;
 		makeGraph();
-		makeSearcher();
 		start = RHB_RTV.findVertex(st).get(0);
 	}
 
@@ -27,15 +27,7 @@ public class NaviRHB {
 			System.err.print("unable to create graph " + e.toString());
 		}
 	}
-	
-	private void makeSearcher() {
-		try {
-			RHB_RTV = new Searcher();
-		} catch (IOException e) {
-			System.err.print("unable to create searcher " + e.toString());
-		}
-	}
-	
+
 	public LinkedList<String> getPath() {
 		return path;
 	}
@@ -160,4 +152,3 @@ public class NaviRHB {
 		return RHB_F;
 	}
 }
-
