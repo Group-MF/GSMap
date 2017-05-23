@@ -4,19 +4,16 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent=""
         android:icon="@drawable/goldnav_logo"
         android:label="@string/app_name"
         android:roundIcon="@drawable/goldnav_logo"
-<<<<<<< HEAD
-        android:screenOrientation="portrait"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-        >
-
-=======
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
->>>>>>> origin/master
+        android:supportsRtl="true">
+        <activity
+            android:name="groupm.goldnav.Pathfinder"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
         <activity android:name="groupm.goldnav.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

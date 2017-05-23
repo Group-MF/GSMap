@@ -7,7 +7,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import com.R;
+import it.sephiroth.android.library.*;
 
+/**
+ *
+ * Usage
+
+ There is a sample provided which shows how to use the library in a more advanced way, but for completeness, here is all that is required to get PhotoView working:
+
+ <com.github.chrisbanes.photoview.PhotoView
+ android:id="@+id/photo_view"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"/>
+ PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
+ photoView.setImageResource(R.drawable.image);
+
+ MAY HAVE TO REMOVE SEPHIROTH LIBRARY - POSSIBLE CLASH
+ */
 public class ShowMap extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
