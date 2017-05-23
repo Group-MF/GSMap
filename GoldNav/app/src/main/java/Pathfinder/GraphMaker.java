@@ -7,12 +7,12 @@ public class GraphMaker {
 	private EdgeWeightedGraph graph;
 	private String append;
 	
-	public GraphMaker(String filename) throws IOException {
+	public GraphMaker(InputStream filename) throws IOException {
 		append = "";
 		graph = createGraph(filename);
 	}
 	
-	public GraphMaker(String filename, String a) throws IOException {
+	public GraphMaker(InputStream filename, String a) throws IOException {
 		append = a;
 		graph = createGraph(filename);
 	}
@@ -21,9 +21,9 @@ public class GraphMaker {
 		return graph;
 	}
 	
-	private EdgeWeightedGraph createGraph(String filename) throws IOException {
+	private EdgeWeightedGraph createGraph(InputStream filename) throws IOException {
 		EdgeWeightedGraph newGraph = new EdgeWeightedGraph();
-		Scanner file = new Scanner(new File(filename));
+		Scanner file = new Scanner(filename);
 		HashMap<String, String> nodeToVertex = new HashMap<String, String>();
 		
 		while(file.hasNextLine()) { // Reads through a .txt file to gather the info required to create a graph
