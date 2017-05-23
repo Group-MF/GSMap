@@ -1,5 +1,7 @@
 package Pathfinder;
 
+import android.content.res.AssetManager;
+
 import java.util.*;
 import java.io.*;
 
@@ -11,34 +13,39 @@ public class NaviRHB {
 	String start, finish;
 	LinkedList<String> path;
 	
-	public NaviRHB(String st, String finish, Searcher RHB) {
+	public NaviRHB(String st, String end, AssetManager assets) {
 		path = null;
-		RHB_RTV = RHB;
-		makeGraph();
+		makeSearcher(assets);
+		makeGraph(assets);
 		start = RHB_RTV.findVertex(st).get(0);
+		finish = end;
+		findPath(start, finish, RHB_RTV);
 	}
 
-	private void makeGraph() {
+	private void makeGraph(AssetManager assets) {
 		try {
-			RHB_F1 = new GraphMaker("RHB_Layout_F1_info.txt", "F1_");
-			RHB_F2 = new GraphMaker("RHB_Layout_F2_info.txt", "F2_");
-			RHB_F3 = new GraphMaker("RHB_Layout_F3_info.txt", "F3_");
+			RHB_F1 = new GraphMaker(assets.open("RHB_Layout_F1_info.txt"), "F1_");
+			RHB_F2 = new GraphMaker(assets.open("RHB_Layout_F2_info.txt"), "F2_");
+			RHB_F3 = new GraphMaker(assets.open("RHB_Layout_F3_info.txt"), "F3_");
 		} catch (IOException e) {
 			System.err.print("unable to create graph " + e.toString());
+		}
+	}
+
+	private void makeSearcher(AssetManager assets) {
+		try {
+			RHB_RTV = new Searcher(assets);
+		} catch (IOException e) {
+			System.err.print("unable to create searcher " + e.toString());
 		}
 	}
 
 	public LinkedList<String> getPath() {
 		return path;
 	}
-
-	public void startPathfinder(){
-		findPath(start, finish, RHB_RTV);
-	}
 	
 	public void findPath(String start, String end, Searcher RHB) {
 		double smallest = Double.POSITIVE_INFINITY;
-		
 		for(String potentEnd: RHB.findVertex(end)) {	// For each appropriate exit
 			double smallestWeight = Double.POSITIVE_INFINITY;
 			boolean endIsHighest = false;
@@ -105,12 +112,22 @@ public class NaviRHB {
 						smallest = smallestWeight;
 						path = crntPath;
 					}
+					// Reverses the path
+					LinkedList<String> temp = (LinkedList<String>) path.clone();
+					for(int i = 0; i < path.size(); i++) {
+						path.set(i, temp.removeLast());
+					}
 				}
 			} else {
 				aStar navi = new aStar(RHB_F, start, potentEnd);
 				if(smallest > navi.getPathWeight()) {
 					smallest = navi.getPathWeight();
 					path = navi.getPath();
+				}
+				// Reverses the path
+				LinkedList<String> temp = (LinkedList<String>) path.clone();
+				for(int i = 0; i < path.size(); i++) {
+					path.set(i, temp.removeLast());
 				}
 			}
 		}
