@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/showRHB"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="groupm.goldnav.ShowMap"
@@ -102,8 +103,8 @@
 
     <ImageButton
         android:id="@+id/upButton"
-        android:layout_width="192dp"
-        android:layout_height="48dp"
+        android:layout_width="182dp"
+        android:layout_height="41dp"
         android:layout_marginRight="1dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/upbutton"
@@ -115,12 +116,15 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintRight_creator="1"
-        android:layout_marginEnd="1dp"/>
+        android:layout_marginEnd="1dp"
+        tools:layout_editor_absoluteY="526dp"
+        tools:layout_editor_absoluteX="177dp"
+        android:layout_marginBottom="0dp"/>
 
     <ImageButton
         android:id="@+id/downButton"
-        android:layout_width="192dp"
-        android:layout_height="48dp"
+        android:layout_width="178dp"
+        android:layout_height="42dp"
 
         android:adjustViewBounds="true"
         android:contentDescription="@string/downbutton"
@@ -136,41 +140,9 @@
         app:srcCompat="@drawable/button_down"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"/>
-
-    <ImageSwitcher
-        android:id="@+id/renderMap"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:foreground="@drawable/rhb_f1"
-        android:visibility="gone"
-
-
-        app:layout_constraintRight_toLeftOf="parent"
-        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:layout_constraintHorizontal_bias="0.5">
-
-        <ImageView
-            android:id="@+id/floor1"
-            android:layout_width="0dp"
-            android:layout_height="192dp"
-            />
-
-        <ImageView
-            android:id="@+id/floor2"
-            android:layout_width="0dp"
-            android:layout_height="192dp"
-
-
-            />
-    </ImageSwitcher>
+        tools:layout_editor_absoluteY="525dp"
+        android:layout_marginBottom="0dp"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -186,5 +158,13 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="85dp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rhb_f1"
+        tools:layout_editor_absoluteX="-69dp"
+        tools:layout_editor_absoluteY="-49dp"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -12,19 +12,32 @@
         <activity
             android:name="groupm.goldnav.Pathfinder"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:theme="@android:style/Theme.NoTitleBar"
             />
-        <activity android:name="groupm.goldnav.SplashScreen">
+        <activity
+            android:name="groupm.goldnav.SplashScreen"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="groupm.goldnav.Selections"/>
-        <activity android:name="groupm.goldnav.FindRoom"/>
-        <activity android:name="groupm.goldnav.ShowMap"/>
-        <activity android:name="groupm.goldnav.Path"/>
+        <activity
+            android:name="groupm.goldnav.Selections"
+            android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity
+            android:name="groupm.goldnav.FindRoom"
+            android:theme="@android:style/Theme.NoTitleBar"
+            />
+        <activity
+            android:name="groupm.goldnav.ShowMap"
+            android:theme="@android:style/Theme.NoTitleBar"
+            />
+        <activity
+            android:name="groupm.goldnav.Path"
+            android:theme="@android:style/Theme.NoTitleBar"
+            />
     </application>
 
 </manifest>
