@@ -7,12 +7,13 @@ import processing.core.PImage;
 
 public class drawPathF1 extends PApplet {
 
-    ArrayList<String> path;
+    ArrayList<Vertex> path;
     PImage map;
 
     public void setup() {
-        path = NaviRHB.PathInfo.getPath();
-        map = loadImage("@drawable/rhb_f1");
+        path = NaviRHB.PathInfo.getVertexPath();
+        //map = loadImage("rhb_f1");
+        //image(map, 0, 0);
     }
     public void draw(){
         ArrayList<String> path = new ArrayList<>();

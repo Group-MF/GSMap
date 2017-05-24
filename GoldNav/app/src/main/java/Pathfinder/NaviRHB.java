@@ -22,7 +22,7 @@ public class NaviRHB {
 		start = RHB_RTV.findVertex(st).get(0);
 		end = finish;
 		findPath(start, end, RHB_RTV);
-		PathInfo pInfo = new PathInfo(path);
+		//PathInfo pInfo = new PathInfo(path, RHB_F1.getGraph(), RHB_F2.getGraph(), RHB_F3.getGraph());
 	}
 
 	public ArrayList<String> getPath() {
@@ -172,22 +172,42 @@ public class NaviRHB {
 
 	public static class PathInfo {
 
-		private static ArrayList<String> path;
-		private static String[] maps;
+		private static ArrayList<Vertex> vertexPath;
+		private static String[] maps;	// Used to know what floors to run drawPath on
+		private EdgeWeightedGraph RHB_F1;
+		private EdgeWeightedGraph RHB_F2;
+		private EdgeWeightedGraph RHB_F3;
 
-		public PathInfo(ArrayList<String> path) {
-			this.path = path;
+		public PathInfo(ArrayList<String> path, EdgeWeightedGraph F1, EdgeWeightedGraph F2, EdgeWeightedGraph F3) {
+			RHB_F1 = F1;
+			RHB_F2 = F2;
+			RHB_F3 = F3;
+			loadPath(path);
+			loadMaps(path);
 		}
 
-		public static ArrayList<String> getPath() {
-			return path;
+		public static ArrayList<Vertex> getVertexPath() {
+			return vertexPath;
 		};
 
 		public static String[] getMaps() {
 			return maps;
 		}
 
-		private void loadMaps() {
+		private void loadPath(ArrayList<String> path) {
+			for(String vertexLabel: path) {
+				char floorNum = vertexLabel.charAt(1);
+				if(floorNum == '1') {
+					vertexPath.add(RHB_F1.getVertex(vertexLabel));
+				} else if(floorNum == '2') {
+					vertexPath.add(RHB_F2.getVertex(vertexLabel));
+				} else {
+					vertexPath.add(RHB_F3.getVertex(vertexLabel));
+				}
+			}
+		}
+
+		private void loadMaps(ArrayList<String> path) {
 			int startF = Integer.valueOf(path.get(0).substring(1));
 			int endF = Integer.valueOf(path.get(path.size()-1).substring(1));
 			int check;
