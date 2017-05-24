@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    defaultConfig {
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
 }
 
 dependencies {
@@ -27,5 +31,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile 'com.github.chrisbanes:PhotoVIew:2.0.0'
+    compile files('libs/android-core.jar')
 }

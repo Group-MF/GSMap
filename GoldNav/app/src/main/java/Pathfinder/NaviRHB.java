@@ -1,6 +1,7 @@
 package Pathfinder;
 
 import android.content.res.AssetManager;
+import android.graphics.Path;
 
 import java.util.*;
 import java.io.*;
@@ -10,16 +11,22 @@ public class NaviRHB {
 	GraphMaker RHB_F2;
 	GraphMaker RHB_F3;
 	Searcher RHB_RTV;
-	String start, finish;
-	LinkedList<String> path;
+	String start, end;
+	ArrayList<String> path;
 	
-	public NaviRHB(String st, String end, AssetManager assets) {
+	public NaviRHB(String st, String finish, AssetManager assets, Options options) {
 		path = null;
 		makeSearcher(assets);
 		makeGraph(assets);
+		updateOptions(options);
 		start = RHB_RTV.findVertex(st).get(0);
-		finish = end;
-		findPath(start, finish, RHB_RTV);
+		end = finish;
+		findPath(start, end, RHB_RTV);
+		PathInfo pInfo = new PathInfo(path);
+	}
+
+	public ArrayList<String> getPath() {
+		return path;
 	}
 
 	private void makeGraph(AssetManager assets) {
@@ -40,11 +47,13 @@ public class NaviRHB {
 		}
 	}
 
-	public LinkedList<String> getPath() {
-		return path;
+	private void updateOptions(Options options) {
+		options.updateGraph(RHB_F1.getGraph());
+		options.updateGraph(RHB_F2.getGraph());
+		options.updateGraph(RHB_F3.getGraph());
 	}
 	
-	public void findPath(String start, String end, Searcher RHB) {
+	private void findPath(String start, String end, Searcher RHB) {
 		double smallest = Double.POSITIVE_INFINITY;
 		for(String potentEnd: RHB.findVertex(end)) {	// For each appropriate exit
 			double smallestWeight = Double.POSITIVE_INFINITY;
@@ -52,8 +61,8 @@ public class NaviRHB {
 			char startFloor = start.charAt(1);
 			char endFloor = potentEnd.charAt(1);
 			EdgeWeightedGraph RHB_F = getFloor(startFloor);
-			List<String> stairList = new ArrayList<String>();
-			LinkedList<String> crntPath = new LinkedList<String>();
+			ArrayList<String> stairList = new ArrayList<String>();
+			ArrayList<String> crntPath = new ArrayList<String>();
 			
 			if(startFloor != endFloor) {						// If the startFloor and endFloor are not the same level
 				for(String stairs: RHB.findVertex("STAIRS")) {	// find all stair vertices
@@ -112,11 +121,7 @@ public class NaviRHB {
 						smallest = smallestWeight;
 						path = crntPath;
 					}
-					// Reverses the path
-					LinkedList<String> temp = (LinkedList<String>) path.clone();
-					for(int i = 0; i < path.size(); i++) {
-						path.set(i, temp.removeLast());
-					}
+					Collections.reverse(path);
 				}
 			} else {
 				aStar navi = new aStar(RHB_F, start, potentEnd);
@@ -124,16 +129,12 @@ public class NaviRHB {
 					smallest = navi.getPathWeight();
 					path = navi.getPath();
 				}
-				// Reverses the path
-				LinkedList<String> temp = (LinkedList<String>) path.clone();
-				for(int i = 0; i < path.size(); i++) {
-					path.set(i, temp.removeLast());
-				}
+				Collections.reverse(path);
 			}
 		}
 	}
 	
-	private String linkFloors(LinkedList<String> path) {
+	private String linkFloors(ArrayList<String> path) {
 		String stairs = path.get(0);
 		char floorNum = stairs.charAt(1);
 		char[] destination = stairs.toCharArray();
@@ -145,7 +146,7 @@ public class NaviRHB {
 			return new String(destination);
 		}		
 		if(floorNum == '3') {
-			LinkedList<String> tempList = new LinkedList<String>();
+			ArrayList<String> tempList = new ArrayList<String>();
 			char[] stairLink1 = stairs.toCharArray();
 			char[] stairLink2 = stairs.toCharArray();
 			stairLink1[1] = '2';
@@ -167,5 +168,39 @@ public class NaviRHB {
 		if(floorNum == '2') RHB_F = RHB_F2.getGraph();
 		if(floorNum == '3') RHB_F = RHB_F3.getGraph();
 		return RHB_F;
+	}
+
+	public static class PathInfo {
+
+		private static ArrayList<String> path;
+		private static String[] maps;
+
+		public PathInfo(ArrayList<String> path) {
+			this.path = path;
+		}
+
+		public static ArrayList<String> getPath() {
+			return path;
+		};
+
+		public static String[] getMaps() {
+			return maps;
+		}
+
+		private void loadMaps() {
+			int startF = Integer.valueOf(path.get(0).substring(1));
+			int endF = Integer.valueOf(path.get(path.size()-1).substring(1));
+			int check;
+			if(startF > endF) {
+				check = startF - endF;
+			} else {
+				check = endF - startF;
+			}
+			if(check == 2) {
+				maps = new String[]{"F1", "F2", "F3"};
+			} else {
+				maps = new String[]{path.get(0).substring(0,1), path.get(path.size()-1).substring(0,1)};
+			}
+		}
 	}
 }

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class aStar {
 	private double pathWeight;
-	private LinkedList<String> path;
+	private ArrayList<String> path;
 	
 	public aStar(EdgeWeightedGraph graph, String start, String end) {
 		pathWeight = 0;
@@ -15,7 +15,7 @@ public class aStar {
 		return pathWeight;
 	}
 	
-	public LinkedList<String> getPath() {
+	public ArrayList<String> getPath() {
 		return path;
 	}
 	
@@ -33,12 +33,12 @@ public class aStar {
 		return xDist + yDist;
 	}
 
-	private LinkedList<String> calcPath(EdgeWeightedGraph graph, String start, String end) {	// The main logic for this class
+	private ArrayList<String> calcPath(EdgeWeightedGraph graph, String start, String end) {	// The main logic for this class
 		TreeMap<String, Integer> arrayPos = new TreeMap<String, Integer>(); // Used to map Vertex labels to array index positions
 		TreeMap<String, Vertex> unvisited = new TreeMap<String, Vertex>(graph.getVertices()); // List of all vertices to traverse
 		String[] previous = new String[graph.size()];
 		double[] distance = new double[graph.size()];
-		LinkedList<String> path = null;
+		ArrayList<String> path = null;
 		ArrayList<String> inaccessV = new ArrayList<String>(); // Inaccessible vertex(inaccess V) a list of vertices to be removes from unvisited
 		Vertex current = unvisited.get(start);
 		
@@ -107,7 +107,7 @@ public class aStar {
 				return null;
 			}
 			if(current.getLabel().equals(end)) { // When the current vertex is the destination
-				path = new LinkedList<String>(); // Initialize LinkedList
+				path = new ArrayList<String>(); // Initialize ArrayList
 				String label = end;
 				pathWeight = distance[arrayPos.get(label)];
 				while(!label.equals(start)) { // Goes through previous array to find the path used

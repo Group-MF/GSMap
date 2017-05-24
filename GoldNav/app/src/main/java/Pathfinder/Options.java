@@ -17,24 +17,36 @@ public class Options {
 		accessibility = b;
 	}
 
+	public Boolean getAccess() {
+		return accessibility;
+	}
+
 	public void setLargeRoom(boolean b) {
 		largeRoom = b;
+	}
+
+	public Boolean getLargeRoom() {
+		return largeRoom;
 	}
 
 	public void setFireExits(boolean b) {
 		fireExits = b;
 	}
+
+	public Boolean getFireExits() {
+		return fireExits;
+	}
 	
 	// Needs testing
-	public static void Options(EdgeWeightedGraph RHB) { // Turn into an event listener
+	public void updateGraph(EdgeWeightedGraph RHB) {
 		Iterator<Vertex> vertexIt = RHB.getVertices().values().iterator();
 		while(vertexIt.hasNext()) { // Goes through all vertices
 			Vertex vertex = vertexIt.next();
 			String vertexType = vertex.getType();
-			if(vertexType.contains("Stair")) vertex.setActive(!accessibility);
-			else if(vertexType.equals("Lift")) vertex.setActive(accessibility);
-			else if(vertexType.equals("LargeRoom")) vertex.setActive(largeRoom);
-			else if(vertexType.equals("Exit") && vertex.getLabel().contains("FE")) vertex.setActive(fireExits);
+			if(vertexType.contains("stair")) vertex.setActive(!accessibility);
+			else if(vertexType.equals("lift")) vertex.setActive(accessibility);
+			else if(vertexType.equals("largeRoom")) vertex.setActive(largeRoom);
+			else if(vertexType.equals("exit") && vertex.getLabel().contains("FE")) vertex.setActive(fireExits);
 		}
 	}
 }

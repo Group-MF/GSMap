@@ -73,10 +73,7 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         android:textStyle="bold"
-        android:layout_marginStart="-7dp"
         android:layout_marginLeft="-7dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginEnd="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/goldsmiths"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
@@ -86,24 +83,16 @@
 
     <TextView
         android:id="@+id/marcellino"
-        android:layout_width="108dp"
-        android:layout_height="19dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="-7dp"
+
+        android:layout_marginTop="-5dp"
         android:text="@string/marci"
-        android:textAlignment="textEnd"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/joel"
-        app:layout_constraintVertical_bias="0.666"/>
+        app:layout_constraintRight_toRightOf="@+id/joel"
+        app:layout_constraintTop_toBottomOf="@+id/joel" />
 
     <TextView
         android:id="@+id/joel"
@@ -114,16 +103,13 @@
         android:text="@string/joel"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="0dp"
         app:layout_constraintRight_toRightOf="@+id/goldsmiths"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.958"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"/>
+        app:layout_constraintVertical_bias="0.958" />
 
     <TextView
         android:id="@+id/bez"
@@ -133,8 +119,6 @@
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
         app:layout_constraintLeft_toLeftOf="@+id/groupM"
         android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/groupM" />

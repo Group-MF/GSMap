@@ -6,14 +6,13 @@ import android.os.Bundle;
 import android.content.pm.ActivityInfo;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.R;
 
-import java.io.IOException;
-import java.util.List;
-
 import Pathfinder.NaviRHB;
-import Pathfinder.Searcher;
+import Pathfinder.Options;
+import Pathfinder.drawPathF1;
 
 public class Path extends AppCompatActivity {
 
@@ -23,15 +22,23 @@ public class Path extends AppCompatActivity {
         setContentView(R.layout.activity_path);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ListView testL = (ListView) findViewById(R.id.list);
-        NaviRHB pathfinder;
-        Searcher rooms;
+        TextView location = (TextView) findViewById(R.id.location);
+        TextView destination = (TextView) findViewById(R.id.destination);
+        Options toggle = new Options();
+
         String start = getIntent().getExtras().getString("start");
         String end = getIntent().getExtras().getString("end");
-        String path[] = new String[0];
-        pathfinder = new NaviRHB(start, end, getAssets());
-        List<String> testList = pathfinder.getPath();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, testList);
+        toggle.setAccess(getIntent().getExtras().getBoolean("access"));
+        toggle.setLargeRoom(getIntent().getExtras().getBoolean("largeRooms"));
+        toggle.setFireExits(getIntent().getExtras().getBoolean("fireExits"));
+
+        NaviRHB pathfinder = new NaviRHB(start, end, getAssets(), toggle);
+        //getResources().getIdentifier("@drawable/rhb_f1", "drawable", this.getPackageName());
+        drawPathF1 drawPath = new drawPathF1();
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, pathfinder.getPath());
         testL.setAdapter(adapter);
+        location.setText(start);
+        destination.setText(end);
     }
 
     public void onBackPressed() {

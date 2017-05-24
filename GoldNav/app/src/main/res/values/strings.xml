@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GoldNav</string>
     <string name="goldsmiths">Goldsmiths</string>
-    <string name="campus">RHB Navigator</string>
+    <string name="campus">Campus Navigator</string>
     <string name="group_m">Group M 2016 - 2017</string>
     <string name="joel">Joel Mayner</string>
     <string name="marci">Marcellino Samuels</string>
@@ -23,5 +23,4 @@
     <string name="restrictedsymbol">restrictedSymbol</string>
     <string name="imageview">imageView</string>
     <string name="footer">footer</string>
-    <string name="Floor">Ground</string>
 </resources>

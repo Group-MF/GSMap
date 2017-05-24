@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 
 import java.io.*;
+import java.util.Arrays;
 
 import com.R;
 
@@ -23,8 +24,7 @@ public class FindRoom extends AppCompatActivity {
     private Searcher rooms;
     private AutoCompleteTextView location;
     private AutoCompleteTextView destination;
-    private String start;
-    private String end;
+    String[] roomArr;
     private static final int AUTO_INFO = 1;
 
     @Override
@@ -41,14 +41,14 @@ public class FindRoom extends AppCompatActivity {
             end = savedInstanceState.getString("end");
         }
         */
-        String[] tempArr = new String[0];
+        roomArr = new String[0];
         try{
             rooms = new Searcher(getAssets());
-            tempArr = rooms.getRooms();
+            roomArr = rooms.getRooms();
         } catch(IOException e) {
             e.printStackTrace();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, tempArr);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, roomArr);
         location.setThreshold(1);
         location.setAdapter(adapter);
         destination.setThreshold(1);
@@ -91,12 +91,17 @@ public class FindRoom extends AppCompatActivity {
     }
 
     public void search(View view) {
-        start = location.getText().toString();
-        end = destination.getText().toString();
-        Intent temp = new Intent(this, Path.class);
-        temp.putExtra("start", start);  // Saves variables to be used in next activity
-        temp.putExtra("end", end);      // Saves variables to be used in next activity
-        startActivity(temp);
+        String start = location.getText().toString().trim();
+        String end = destination.getText().toString().trim();
+        if(Arrays.asList(roomArr).contains(start) && Arrays.asList(roomArr).contains(end)) {
+            Intent pathInfo = new Intent(this, Path.class);
+            pathInfo.putExtra("start", start);  // Saves variables to be used in next activity
+            pathInfo.putExtra("end", end);      // Saves variables to be used in next activity
+            pathInfo.putExtra("access", toggle.getAccess());
+            pathInfo.putExtra("largeRooms", toggle.getLargeRoom());
+            pathInfo.putExtra("fireExits", toggle.getFireExits());
+            startActivity(pathInfo);
+        }
     }
 
     public void onBackPressed() {
