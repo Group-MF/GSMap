@@ -12,7 +12,7 @@ double FEx = 10.043096655581408, FEy = 213.84364379203896;
 double F2x = 1586.3161349017862, F2y = 895.249169053422; 
 color red = color(255, 0, 0);
 color green = color(0, 128, 0);
-color orange = color(128, 128, 0);
+color orange = color(255, 128, 0);
 color blue = color(0, 0, 255);
 color purple = color(128, 0, 255);
 color lime = color(0, 255, 0);
@@ -32,53 +32,81 @@ public void draw() {
   //offset at 80%
   image(RHB1, 0, 0, width*scaling, height*scaling);
   //guides F1
-  stroke(lime);
-  line(265, 0, 265, height);
-  line(1625, 0, 1625, height);
+  stroke(lime, 128);
+  line(percentageX(265), 0, percentageX(265), height);
+  line(percentageY(1625), 0, percentageY(1625), height);
+  stroke(lime, 128);
+  line(0, percentageX(30), width, percentageX(30));
+  line(0, percentageY(990), width, percentageY(1010));
   //rangeTest(185.0, 165.0, /*for top left entrance - FE1*/
 
-  //topleft exit
-  rangeTest(265, 153, blue);
-  //bottomleft exit
-  //rangeTest()
-  //topright exit
-  rangeTest(1586.0, 895.0, blue);
-  //bottomright exit
+  /*ADJUSTED POSITIONS*/
+  //left exits
+  rangeTest(265.0, 153.0, red, "adjusted topleft");
+  rangeTest(266.0, 484.0, red, "adjusted bottomleft");
+  //right
+  rangeTest(1625.0, 191.0, red, "adjusted topright");
+  rangeTest(1610.0, 826.0, red, "adjusted bottomright");
 
-  //rangeTest((float)FEx, (float)FEy, color(255, 0, 0));
-  //rangeTest((float)F2x, (float)F2y, color(255, 128, 0));
-  //rangeTest(1537, 200, color(255, 0, 128));
 
-  //rangeTest((float)180.0- (float)offsetX, 480.0-(float)offsetY, color(128, 128, 0));
+  /* ORIGINAL POSITIONS*/
+  //left exits
+  rangeTest(10, 213, purple, "original topleft");
+  rangeTest(9, 1038, purple, "original bottomleft");
+  //right exits
+  rangeTest(3398, 305, purple, "original topright");
+  rangeTest(3345, 1884, purple, "original bottomright");
+  println();
+  int athx = 265;
+  int athy = 132;
+  float geox = 2590, geoy = 0;
+  /*offsetted positions*/
+  rangeTest(
+    percentageX(10)+athx, 
+    percentageY(213)+athy, 
+    orange, "offsetted topleft"
+    );
+  println();
 
-  //rangeTest(3345.0, 1884.0, 
+  rangeTest(
+    (percentageX(10)*geox) +athx, 
+    (percentageY(213)*geoy) +athy, 
+    orange, "offsetted topright"
+    );
 
-  rangeTest(1625.0, 189.0, blue);
-  mousePrint();
 
   //rangeTest(117, 480);
+
+  mousePrint();
 }
 
-void rangeTest(float x, float y, color c) {
+float percentageX(float x) {
+  return  x/ (width/100);
+}
+float percentageY(float y) {
+  return  y/ (height/100);
+}
+
+void rangeTest(float x, float y, color c, String name) {
 
   //int tempx = (int)x+(int)offsetX;
-  int tempx = (int)x;
   //int tempy = (int)y+(int)offsetY;
-  int tempy = (int)y;
-  println(tempx, tempy);
+  println(name+":\t"+percentageX(x)+"%\t", percentageY(y)+"%");
   strokeWeight(3);
   noFill(); 
   stroke(c);
-  ellipse(tempx, tempy, 12, 12);
+  ellipse(x, y, 12, 12);
 }
+
+
 
 void mousePrint() {
   fill(255);
   noStroke();
-  rect(mouseX, mouseY-50, 80, 80);
+  rect(mouseX+30, mouseY-50, 80, 80);
   fill(96, 96, 255);
   textSize(30);
 
-  text(mouseX, mouseX, mouseY);
-  text(mouseY, mouseX, mouseY+30);
+  text(mouseX, mouseX+30, mouseY);
+  text(mouseY, mouseX+30, mouseY+30);
 }
