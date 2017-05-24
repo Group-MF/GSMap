@@ -12,7 +12,7 @@ class NodeLine {
   }
   NodeLine(
     int _x1, int _y1, int _x2, int _y2, 
-    int _ox, int _oy) {
+    int _ox, int _oy) { //mainly using this one
 
     x1 = _x1; 
     y1 = _y1;
@@ -23,7 +23,7 @@ class NodeLine {
   }
   NodeLine(
     int _x1, int _y1, int _x2, int _y2, 
-    int _ox, int _oy, int _ow, int _oh
+    int _ox, int _oy, int _ow, int _oh //just in case divisors are needed
     ) {
 
     x1 = _x1; 
