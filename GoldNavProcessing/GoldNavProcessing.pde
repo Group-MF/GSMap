@@ -40,13 +40,6 @@ public void draw() {
   line(0, percentageY(990), width, percentageY(1010));
   //rangeTest(185.0, 165.0, /*for top left entrance - FE1*/
 
-  /*ADJUSTED POSITIONS*/
-  //left exits
-  rangeTest(265.0, 153.0, red, "adjusted topleft");
-  rangeTest(266.0, 484.0, red, "adjusted bottomleft");
-  //right
-  rangeTest(1625.0, 191.0, red, "adjusted topright");
-  rangeTest(1610.0, 826.0, red, "adjusted bottomright");
 
 
   /* ORIGINAL POSITIONS*/
@@ -59,20 +52,18 @@ public void draw() {
   println();
   int athx = 265;
   int athy = 132;
-  float geox = 2590, geoy = 0;
+  float geox = 2, geoy = 2;
   /*offsetted positions*/
-  rangeTest(
-    percentageX(10)+athx, 
-    percentageY(213)+athy, 
-    orange, "offsetted topleft"
-    );
+    //213, 10, 
+    
+    
+    
   println();
 
-  rangeTest(
-    (percentageX(10)*geox) +athx, 
-    (percentageY(213)*geoy) +athy, 
-    orange, "offsetted topright"
-    );
+  //rangeTest(
+    
+    //orange, "offsetted topright"
+    //);
 
 
   //rangeTest(117, 480);
@@ -91,11 +82,11 @@ void rangeTest(float x, float y, color c, String name) {
 
   //int tempx = (int)x+(int)offsetX;
   //int tempy = (int)y+(int)offsetY;
-  println(name+":\t"+percentageX(x)+"%\t", percentageY(y)+"%");
+  println(name+":\t"+x*2+"%\t", y*2+"%");
   strokeWeight(3);
   noFill(); 
   stroke(c);
-  ellipse(x, y, 12, 12);
+  ellipse(x*2, y*2, 12, 12);
 }
 
 
